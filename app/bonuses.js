@@ -9,7 +9,28 @@
 // Hint: Utilize the string prototype method charCodeAt and generic method fromCharCode
 
 function letterChecker(str) {
+    let ref = 'abcdefghijklmnopqrstuvwxyz'
+    if (!ref.includes(str)) {
 
+        ref = ref.split(str[0])
+        ref.shift()
+
+        ref = ref.toString()
+
+        ref = ref.split(str[str.length - 1])
+        ref.pop()
+        str = str.slice(1, str.length - 1)
+
+        ref = ref.toString()
+
+        for (let lettKey in ref) {
+            let lett = ref[lettKey]
+            if (!str.includes(lett))
+                return lett
+        }
+    } else {
+        return 'no missing letters'
+    }
 }
 
 
@@ -23,6 +44,13 @@ function letterChecker(str) {
 // output: true (because 4+3)
 
 function sumEqualsTarget(arr, target) {
+    for (numKey in arr) {
+        num = arr[numKey]
+        if (arr.includes(target - num)) {
+            return true
+        }
+    }
+    return false
 }
 
 
