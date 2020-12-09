@@ -55,7 +55,7 @@ describe("bonuses.js", () => {
          chai.assert.isTrue(arraysMatch(oddAscender([2, 8, 4]), [2, 8, 4]), "Only change the position of odd numbers!")
       })
       it("sorts odd numbers ascending", () => {
-         chai.assert.isTrue(arraysMatch(oddAscender([2, 9, 4, 3, 6, 6, 1, 5, 8]), [2, 1, 4, 3, 6, 6, 5, 9, 8]), "Return the array with evens in same positions and odds ascending.")
+         chai.assert.isTrue(arraysMatch(oddAscender([2, 11, 31, 999, 2, 9, 4, 3, 6, 6, 1, 5, 8, 9, 10, 1, 14]), [2, 1, 1, 3, 2, 5, 4, 9, 6, 6, 9, 11, 8, 31, 10, 999, 14]), "Return the array with evens in same positions and odds ascending.")
       })
    })
 })

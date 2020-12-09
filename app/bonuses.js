@@ -64,38 +64,37 @@ function sumEqualsTarget(arr, target) {
 // output: [2, 1, 4, 3, 6, 6, 5, 9, 8]
 
 function oddAscender(arr) {
-    return bubble(arr)
-}
-
-function bubble(arrB) {
-    console.log('array: ', arrB);
     var n = 0
     var i = 0
     var element;
     var element2;
-    for (let p = 0; p < 5; p++) {
+    performedSwap = true
+    mainLoopCounter = 0
+    while (performedSwap) {
+        mainLoopCounter++
+        performedSwap = false
         i = 0
-        console.log('big loop');
-        for (i; i < arrB.length; i++) {
-            if (arrB[i] % 2 == 1) {
-                element = arrB[i];
-                for (var n = i + 1; n < arrB.length; n++) {
-                    if (arrB[n] % 2 == 1) {
-                        element2 = arrB[n];
+        for (i; i < arr.length; i++) {
+            if (arr[i] % 2 == 1) {
+                element = arr[i];
+                for (var n = i + 1; n < arr.length; n++) {
+                    if (arr[n] % 2 == 1) {
+                        element2 = arr[n];
                         break
                     }
                 }
             }
             if (element > element2) {
-                let swapper = arrB[i]
-                arrB[i] = arrB[n]
-                arrB[n] = swapper
+                performedSwap = true
+                let swapper = arr[i]
+                arr[i] = arr[n]
+                arr[n] = swapper
                 element = undefined
                 element2 = undefined
             }
         }
-        console.log('semifinal', arrB);
     }
-    console.log('final final out: ', arrB)
-    return arrB
+    console.log(`passed thru main loop ${mainLoopCounter} times`);
+    console.log(`Sort result: ${arr}`)
+    return arr
 }
